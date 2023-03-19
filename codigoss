@@ -1,0 +1,111 @@
+2)
+import java.util.Scanner;
+public class NewClass {
+ public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Digite um número inteiro: ");
+        int numero = input.nextInt();
+
+        int n1 = 0;
+        int n2 = 1;
+        int n3;
+
+        while (n1 <= numero) {
+            if (n1 == numero) {
+                System.out.println(numero + " pertence à sequência de Fibonacci");
+                return;
+            }
+
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+        }
+
+        System.out.println(numero + " não pertence à sequência de Fibonacci");
+    }
+}
+
+3)
+public class NewClass {
+
+    public static void main(String[] args) {
+
+        double[] faturamentoDiario = {50.0, 100.0, 80.0, 120.0, 70.0, 90.0, 110.0, 130.0, 60.0, 95.0, 75.0, 85.0};
+
+        double menorf = faturamentoDiario[0];
+        double maiorf = faturamentoDiario[0];
+        double somaf = 0.0;
+        int diasAcimaDaMedia = 0;
+
+        for (double valor : faturamentoDiario) {
+            somaf += valor;
+            if (valor < menorf) {
+                menorf = valor;
+            }
+            if (valor > maiorf) {
+                maiorf = valor;
+            }
+        }
+        double mediaMensal = somaf / faturamentoDiario.length;
+
+        for (double valor : faturamentoDiario) {
+            if (valor > mediaMensal) {
+                diasAcimaDaMedia++;
+            }
+        }
+
+        System.out.println("Menor valor de faturamento diário: " + menorf);
+        System.out.println("Maior valor de faturamento diário: " + maiorf);
+        System.out.println("Número de dias com faturamento diário acima da média: " + diasAcimaDaMedia);
+    }
+
+}
+
+4)
+public class NewClass {
+
+    public static void main(String[] args) {
+
+     
+        double faturamentoSP = 67836.43;
+        double faturamentoRJ = 36678.66;
+        double faturamentoMG = 29229.88;
+        double faturamentoES = 27165.48;
+        double faturamentoOutros = 19849.53;
+        
+        double faturamentoTotal = faturamentoSP + faturamentoRJ + faturamentoMG + faturamentoES + faturamentoOutros;
+        
+        double percentualSP = (faturamentoSP / faturamentoTotal) * 100.0;
+        double percentualRJ = (faturamentoRJ / faturamentoTotal) * 100.0;
+        double percentualMG = (faturamentoMG / faturamentoTotal) * 100.0;
+        double percentualES = (faturamentoES / faturamentoTotal) * 100.0;
+        double percentualOutros = (faturamentoOutros / faturamentoTotal) * 100.0;
+        
+        System.out.println("Percentual de representação do faturamento de SP: " + percentualSP + "%");
+        System.out.println("Percentual de representação do faturamento do RJ: " + percentualRJ + "%");
+        System.out.println("Percentual de representação do faturamento de MG: " + percentualMG + "%");
+        System.out.println("Percentual de representação do faturamento do ES: " + percentualES + "%");
+        System.out.println("Percentual de representação do faturamento de outros estados: " + percentualOutros + "%");
+    }
+
+}
+5)
+import java.util.Scanner;
+
+public class NewClass {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma palavra: ");
+        String palavra = scanner.nextLine();
+
+        String palavraInvertida = "";
+
+        for (int i = palavra.length() - 1; i >= 0; i--) {
+            palavraInvertida += palavra.charAt(i);
+        }
+
+        System.out.println("Palavra invertida: " + palavraInvertida);
+    }
+}
